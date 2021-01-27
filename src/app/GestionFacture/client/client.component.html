@@ -16,12 +16,55 @@
         <td>{{c.email}}</td>
         <td>{{c.adress}}</td>
           <td>
-            <button  class="btn btn-success" >Modifier</button> &nbsp;
-            <button class="btn btn-success" >Ajouter</button> &nbsp;&nbsp;
-            <button class="btn btn-danger">Supprimer</button>
+            
+            <button class="btn btn-success" (click)="basicModal.show()"><mdb-icon fas icon="plus"></mdb-icon></button> &nbsp;
+            <button  class="btn btn-success" routerLink="/modifierClient/{{c.clientID}}"><mdb-icon fas icon="pencil-alt"></mdb-icon></button> &nbsp;&nbsp;
+            <button class="btn btn-danger" (click)="deleteClient(c.clientID)"><mdb-icon far icon="trash-alt"></mdb-icon></button>
           </td>  
        </tr>
       </tbody>
     
     </table>
+
+<!------------------------Ajouter Client ------------------------------>
+<div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-full-height modal-right" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Ajouter un Client</h4>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="save()">
+        <div class="md-form">
+            <mdb-icon fas icon="user" class="prefix"></mdb-icon>
+            <input mdbInput type="text" id="form2" class="form-control" name="name" [(ngModel)]="client.name">
+            <label for="form2">Nom Client</label>
+          </div>
+          <div class="md-form">
+            <mdb-icon fas icon="envelope" class="prefix"></mdb-icon>
+            <input mdbInput type="email" id="form3" class="form-control" name="Email" [(ngModel)]="client.email">
+            <label for="form3">Email Client</label>
+          </div>
+          
+          <div class="md-form">
+            <mdb-icon far icon="address-card" class="prefix"></mdb-icon>
+            <input mdbInput type="text" id="form4" class="form-control" name="Email" [(ngModel)]="client.adress">
+            <label for="form4">Adresse Client</label>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+            <button  mdbBtn color="primary" class="relative waves-light" mdbWavesEffect type="submit">Ajouter</button>
+          </div>
+        </form>
+      </div>
+   
+    </div>
   </div>
+</div>
+
+</div>

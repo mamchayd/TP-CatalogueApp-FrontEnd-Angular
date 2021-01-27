@@ -8,20 +8,25 @@ import { ProduitComponent } from './GestionFacture/produit/produit.component';
 import { ClientComponent } from './GestionFacture/client/client.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FlashMessagesModule} from "angular2-flash-messages";
+import { FormsModule } from '@angular/forms';
+import { ModifierClientComponent } from './GestionFacture/modifier-client/modifier-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CategorieComponent,
     ProduitComponent,
-    ClientComponent
+    ClientComponent,
+    ModifierClientComponent,
+    
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
