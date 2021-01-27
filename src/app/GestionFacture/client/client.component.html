@@ -1,0 +1,27 @@
+<div class="container">
+    <flash-messages></flash-messages>
+  </div>
+  <div class="container">
+    <h1>La liste des clients</h1>
+    <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+      <thead>
+      <tr>
+        <th>Id Client</th> <th>Nom Client</th> <th>Email</th> <th>Adresse</th> 
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of clients">
+        <td>{{c.clientID}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.adress}}</td>
+          <td>
+            <button  class="btn btn-success" >Modifier</button> &nbsp;
+            <button class="btn btn-success" >Ajouter</button> &nbsp;&nbsp;
+            <button class="btn btn-danger">Supprimer</button>
+          </td>  
+       </tr>
+      </tbody>
+    
+    </table>
+  </div>

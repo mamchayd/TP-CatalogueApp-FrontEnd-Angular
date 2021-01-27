@@ -1,0 +1,27 @@
+<div class="container">
+    <flash-messages></flash-messages>
+  </div>
+  <div class="container">
+    <h1>La liste des produits</h1>
+    <table mdbTable #tableEl="mdbTable" class="z-depth-1">
+      <thead>
+      <tr>
+        <th>Id Produit</th> <th>Nom Produit</th> <th>Prix</th> <th>Categorie</th> 
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{p.productID}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.category}}</td>
+          <td>
+            <button  class="btn btn-success" >Modifier</button> &nbsp;
+            <button class="btn btn-success" >Ajouter</button> &nbsp;&nbsp;
+            <button class="btn btn-danger">Supprimer</button>
+          </td>  
+       </tr>
+      </tbody>
+    
+    </table>
+  </div>
