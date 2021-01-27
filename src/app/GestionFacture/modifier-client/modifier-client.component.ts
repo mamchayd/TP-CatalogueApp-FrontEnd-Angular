@@ -27,7 +27,7 @@ export class ModifierClientComponent implements OnInit {
     this.clientService.update(Number(this.id), this.client).subscribe(data=>{});
     this.flash.show('Le client bien ete modifier', { cssClass:'alert alert-success',timeout:2000});
     setTimeout(() => {
-      this.route.navigate(['products']);
+      this.route.navigate(['client']);
     }, 1000);  //1s
   }
 }

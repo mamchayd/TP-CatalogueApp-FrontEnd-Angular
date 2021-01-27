@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {FlashMessagesModule} from "angular2-flash-messages";
 import { FormsModule } from '@angular/forms';
 import { ModifierClientComponent } from './GestionFacture/modifier-client/modifier-client.component';
+import { ModifierCategoryComponent } from './GestionFacture/modifier-category/modifier-category.component';
+import { ModifierProduitComponent } from './GestionFacture/modifier-produit/modifier-produit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ModifierClientComponent } from './GestionFacture/modifier-client/modifi
     ProduitComponent,
     ClientComponent,
     ModifierClientComponent,
+    ModifierCategoryComponent,
+    ModifierProduitComponent,
     
   ],
   imports: [

@@ -37,7 +37,7 @@ export class ClientComponent implements OnInit {
       });
     setTimeout(() => {
       this.OngetClients();
-      this.route.navigate(['clients']);
+      this.route.navigate(['client']);
     }, 1000);  //1s
   }
 
