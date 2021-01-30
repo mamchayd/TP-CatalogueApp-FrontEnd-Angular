@@ -29,7 +29,7 @@ export class DataService {
   }
 
   // @ts-ignore
-  delete(resource: Object){
-    return this.http.delete(this.url + resource + '/');
+  delete(id: Number){
+    return this.http.delete(this.url+id );
   }
 }

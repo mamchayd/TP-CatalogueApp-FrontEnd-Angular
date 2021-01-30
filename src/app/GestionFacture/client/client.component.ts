@@ -11,14 +11,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class ClientComponent implements OnInit {
 
   public clients:any;
+  public id:string="";
 
   client:any={id:0,name:"",email:"",adress:""};
 
   constructor(private clientService : ClientService, private route: Router, private flash: FlashMessagesService,private routeActive: ActivatedRoute) { }
   ngOnInit(): void {
-
+    
     this.OngetClients();
- 
 
   }
   OngetClients(){
@@ -42,15 +42,19 @@ export class ClientComponent implements OnInit {
   }
 
   deleteClient(id : number){
-    if(confirm('vous ete sur le point de supprimer un client, ete-vous sur de cette operation ?')) {
-      this.clients.forEach((element: any, index: number) => {
-        if (element.clientID == id)
-          this.clients.splice(index, 1);
-      });
-      this.clientService.delete(this.client).subscribe(data=>{});
-      this.OngetClients();
+    if(confirm('vous ete sur le point de supprimer un client, ete-vous sur de cette operation ?')) 
+    {
+      console.log(id);
+      this.clientService.delete(id).subscribe(data=>{});
+      
       this.flash.show('Client bien supprimer', {cssClass: 'alert alert-danger', timeout: 2000});
+      setTimeout(() => {
+        this.route.navigate(['client']);
+        this.OngetClients();
+      }, 1000);  //1s
     }
-  }
+    }
+  
+
 
 }

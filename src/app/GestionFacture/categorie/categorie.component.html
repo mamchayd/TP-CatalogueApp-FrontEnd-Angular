@@ -18,7 +18,7 @@
         <td>{{c.name}}</td>
         <td>
           <button  class="btn btn-success"  routerLink="/modifierCategory/{{c.categoryID}}"><mdb-icon fas icon="pencil-alt"></mdb-icon></button> &nbsp;&nbsp;
-          <button class="btn btn-danger"><mdb-icon far icon="trash-alt"></mdb-icon></button>
+          <button class="btn btn-danger" (click)="deleteCategory(c.categoryID)"><mdb-icon far icon="trash-alt"></mdb-icon></button>
         </td>  
      </tr>
     </tbody>

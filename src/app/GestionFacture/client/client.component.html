@@ -3,6 +3,8 @@
   </div>
   <div class="container">
     <h1>La liste des clients</h1>
+    <button class="btn btn-success" (click)="basicModal.show()"><mdb-icon fas icon="plus"></mdb-icon></button> &nbsp;
+
     <table mdbTable #tableEl="mdbTable" class="z-depth-1">
       <thead>
       <tr>
@@ -17,7 +19,6 @@
         <td>{{c.adress}}</td>
           <td>
             
-            <button class="btn btn-success" (click)="basicModal.show()"><mdb-icon fas icon="plus"></mdb-icon></button> &nbsp;
             <button  class="btn btn-success" routerLink="/modifierClient/{{c.clientID}}"><mdb-icon fas icon="pencil-alt"></mdb-icon></button> &nbsp;&nbsp;
             <button class="btn btn-danger" (click)="deleteClient(c.clientID)"><mdb-icon far icon="trash-alt"></mdb-icon></button>
           </td>  

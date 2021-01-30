@@ -32,7 +32,7 @@ export class ModifierProduitComponent implements OnInit {
     this.productService.update(Number(this.id), this.product).subscribe(data=>{});
     this.flash.show('le produit bien ete modifier', { cssClass:'alert alert-success',timeout:1000});
     setTimeout(() => {
-      this.route.navigate(['products']);
+      this.route.navigate(['produit']);
     }, 1000);  //1s
   }
 }

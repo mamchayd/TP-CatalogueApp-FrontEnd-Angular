@@ -43,10 +43,25 @@ export class ProduitComponent implements OnInit {
     this.product.categoryID=Number(this.product.categoryID);
     this.productService.add(this.product).subscribe(data=>{});
     this.flash.show('Le produit bien ete ajouter', { cssClass:'alert alert-success',timeout:1000});
-    this.getProducts();
+    
     setTimeout(() => {
       this.route.navigate(['produit']);
+      this.getProducts();
     }, 1000);  //1s
   }
+  deleteProduit(id : number){
+    console.log("hi");
+    if(confirm('vous ete sur le point de supprimer un produit, ete-vous sur de cette operation ?')) 
+    {
+      console.log(id);
+      this.productService.delete(id).subscribe(data=>{});
+     
+      this.flash.show('produit bien supprimer', {cssClass: 'alert alert-danger', timeout: 2000});
+      setTimeout(() => {
+        this.route.navigate(['produit']);
+        this.getProducts();
+      }, 1000);  //1s
+    }
+    }
 
 }

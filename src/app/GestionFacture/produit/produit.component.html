@@ -19,7 +19,8 @@
         <td>{{p.category}}</td>
           <td>
             <button  class="btn btn-success"  routerLink="/modifierProduit/{{p.productID}}" ><mdb-icon fas icon="pencil-alt"></mdb-icon></button> &nbsp;&nbsp;
-            <button class="btn btn-danger"><mdb-icon far icon="trash-alt"></mdb-icon></button>
+            <button class="btn btn-danger" (click)="deleteProduit(p.productID)"><mdb-icon far icon="trash-alt"></mdb-icon></button>
+         
           </td>  
        </tr>
       </tbody>

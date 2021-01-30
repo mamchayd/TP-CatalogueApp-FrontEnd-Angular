@@ -41,4 +41,20 @@ export class CategorieComponent implements OnInit {
     }, 1000);  //1s
   }
 
+  
+  deleteCategory(id : number){
+    console.log("hi");
+    if(confirm('vous ete sur le point de supprimer une category, ete-vous sur de cette operation ?')) 
+    {
+      console.log(id);
+      this.categorieService.delete(id).subscribe(data=>{});
+     
+      this.flash.show('category bien supprimer', {cssClass: 'alert alert-danger', timeout: 2000});
+      setTimeout(() => {
+        this.route.navigate(['categorie']);
+        this.OngetCategorie();
+      }, 1000);  //1s
+    }
+    }
+
 }
